@@ -10,15 +10,19 @@
 	min-height: 100vh;
 	background: linear-gradient(135deg, #153677, #4e085f);
 	padding: 10px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
 
 .todo-app {
 	width: 100%;
 	max-width: 540px;
 	background: #fff;
-	margin: 100px auto 20px;
-	padding: 40px 30px 70px;
-	border-radius: 10px;
+	margin: 20px;
+	padding: 40px 30px;
+	border-radius: 15px;
+	box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
 }
 
 .todo-app h2 {
@@ -26,6 +30,7 @@
 	display: flex;
 	align-items: center;
 	margin-bottom: 20px;
+	font-size: 24px;
 }
 
 .todo-app h2 img {
@@ -41,6 +46,7 @@
 	border-radius: 30px;
 	padding-left: 20px;
 	margin-bottom: 25px;
+	box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
 
 input {
@@ -49,8 +55,8 @@ input {
 	outline: none;
 	background: transparent;
 	padding: 10px;
-	font-weight: 14px;
-	/* font-size: 16px; */
+	font-size: 16px;
+	color: #333;
 }
 
 button {
@@ -62,6 +68,15 @@ button {
 	font-size: 16px;
 	cursor: pointer;
 	border-radius: 40px;
+	transition: background 0.3s ease;
+}
+
+button:hover {
+	background: #ff3a22;
+}
+
+#list-container {
+	margin-top: 20px;
 }
 
 #list-container li {
@@ -70,6 +85,7 @@ button {
 	padding: 12px 8px 12px 50px;
 	user-select: none;
 	cursor: pointer;
+	position: relative;
 }
 
 #list-container li::before {
@@ -81,8 +97,9 @@ button {
 	background-image: url(./assets/unchecked.png);
 	background-size: cover;
 	background-position: center;
-	/* top: 12px;
-	left: 8px; */
+	left: 10px;
+	top: 50%;
+	transform: translateY(-50%);
 }
 
 #list-container li.checked {
@@ -91,22 +108,29 @@ button {
 }
 
 #list-container li.checked::before {
-	background-image: url(./assets/checked.png);
+	background-image: url(./assets/circle.png);
+}
+
+#list-container li:hover {
+	background: #f9f9f9;
 }
 
 #list-container li span {
 	position: absolute;
-	/* right: 0; */
-	/* top: 5px; */
+	right: 10px;
+	top: 50%;
+	transform: translateY(-50%);
 	width: 40px;
 	height: 40px;
 	font-size: 22px;
 	color: #555;
 	line-height: 40px;
 	text-align: center;
+	border-radius: 50%;
+	transition: background 0.3s ease;
 }
 
 #list-container li span:hover {
-	color: #edeef0;
-	border-radius: 50%;
+	background: #edeef0;
+	color: #ff5945;
 }
